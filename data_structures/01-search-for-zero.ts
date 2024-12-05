@@ -1,6 +1,4 @@
 /* 
-Question #1 - Search for Zero  
-
 Write a program that takes multiple numbers as an input
 Return 'Yes' if the digit 0 appears anywhere in the array
 Otherwise, return 'No'
@@ -11,23 +9,23 @@ Each input should be provided in a new line
 
 Example:
 
-Sample Input 1:
+Input 1:
 > 3  
 > 1  
 > 2  
 > 205
 
-Sample Output 1:
+Output 1:
 > Yes
 
-Sample Input 2:
+Input 2:
 > 4  
 > 1  
 > 2  
 > 3  
 > 99
 
-Sample Output 2:
+Output 2:
 > No 
 */
 

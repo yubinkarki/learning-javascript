@@ -1,15 +1,13 @@
 /*
-Question #2 - Shift the Vowels
-
 Replace all vowels in a sentence with the next closest vowel in the sentence itself
 The last vowel should be replaced by the first vowel in the sentence
 
 Example:
 
-Sample Input 1:
+Input 1:
 > Hello World
 
-Sample Output 1:
+Output 1:
 > Hollo Werld
 */
 
@@ -29,16 +27,13 @@ function changeVowel(sentenceToChange: string): string {
   }
 
   // if no vowels are found, return the original sentence
-  if (vowelsInSentence.length === 0) {
-    return sentenceToChange;
-  }
+  if (vowelsInSentence.length === 0) return sentenceToChange;
 
   let vowelIndex: number = 0;
 
   for (let i = 0; i < lettersToChange.length; i++) {
     if (vowels.has(lettersToChange[i].toLowerCase())) {
-      lettersToChange[i] =
-        vowelsInSentence[vowelIndex + 1] || vowelsInSentence[0];
+      lettersToChange[i] = vowelsInSentence[vowelIndex + 1] || vowelsInSentence[0];
       vowelIndex++;
     }
   }
@@ -46,7 +41,7 @@ function changeVowel(sentenceToChange: string): string {
   return lettersToChange.join("");
 }
 
-const mySentence = "E";
+const mySentence = "Esophagus";
 
 try {
   console.log(changeVowel(mySentence));
