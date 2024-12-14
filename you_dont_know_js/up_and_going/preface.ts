@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 /* PREFACE */
 
 // JavaScript has been a foundational technology that drives interactive experience around the content we consume
