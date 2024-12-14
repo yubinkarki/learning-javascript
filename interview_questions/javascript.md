@@ -20,4 +20,5 @@
 > Hash map data structure  
 > Closure and Hoisting  
 > Memoization  
-> Performance of a web page
+> Performance of a web page  
+> SQL join and query performance
