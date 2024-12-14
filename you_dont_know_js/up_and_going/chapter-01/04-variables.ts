@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 /* VARIABLES */
 
 // most programs need to track a values as it changes over the course of the program, undergoing different operations as called for by your program's intended tasks

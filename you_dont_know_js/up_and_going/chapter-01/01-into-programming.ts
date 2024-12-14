@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 /* INTO PROGRAMMING */
 
 // 'Up & Going' is an introduction to several basic concepts of programming - of course we lean toward JS specifically

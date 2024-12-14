@@ -1,4 +1,6 @@
-/* VALUE & TYPES */
+// @ts-nocheck
+
+/* VALUE AND TYPES */
 
 // different representation of for values are called types in programming terminology
 // JS has built-in types for each of the primitive values

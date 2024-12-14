@@ -1,7 +1,9 @@
+// @ts-nocheck
+
 /* OPERATORS */
 
-a = 2;
-b = a + 1;
+var a = 2;
+var b = a + 1;
 
 // here, we assign the value 2 to the 'a' variable, then we get the value of the 'a' variable, add 1 to it resulting in the value 3, then store that value in the 'b' variable
 // while not technically an operator, you'll need the keyword var in every program, as it's the primary way you declare variables
