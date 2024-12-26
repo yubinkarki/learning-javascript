@@ -2,7 +2,7 @@
 
 /* PREFACE */
 
-// JavaScript has been a foundational technology that drives interactive experience around the content we consume
+// JS has been a foundational technology that drives interactive experience around the content we consume
 // few doubt its importance at the heart of the world's most widely available software platform: the Web
 // but as a language, it has perpetually been a target for a great deal of criticism due to its design philosophy
 // while JS is perhaps one of the easiest languages to get up nd running with, its eccentricities make solid mastery of the language a vastly less common occurrence than in many other languages
