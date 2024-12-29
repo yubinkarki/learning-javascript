@@ -97,7 +97,6 @@ if (typeof atob === "undefined") {
 // on the other hand, manually referencing the global variable with a window reference is something some developers prefer to avoid, especially if your code needs to run in multiple JS environments (not just browsers, but server-side node.js, for instance), where the global variable may not always be called window
 // technically, this safety guard on typeof is useful even if you’re not using global variables, though these circumstances are less common, and some developers may find this design approach less desirable
 // imagine a utility function that you want others to copy-and-paste into their programs or modules, in which you want to check to see if the including program has defined a certain variable (so that you can use it) or not:
-
 function doSomethingCool() {
   var helper = typeof FeatureXYZ !== "undefined" ? FeatureXYZ : function () {};
   var val = helper();
@@ -105,7 +104,6 @@ function doSomethingCool() {
 
 // doSomethingCool() tests for a variable called FeatureXYZ, and if found, uses it, but if not, uses its own
 // now, if someone includes this utility into their module/program, it safely checks if they’ve defined FeatureXYZ or not:
-
 (function () {
   function FeatureXYZ() {}
 
@@ -121,7 +119,6 @@ function doSomethingCool() {
 // and importantly, here there is no object we can use (like we did for global variables with window.___) to make the check, so typeof is quite helpful
 
 // other developers would prefer a design pattern called “dependency injection” where instead of doSomethingCool() inspecting implicitly for FeatureXYZ to be defined outside/around it, it would need to have the dependency explicitly passed in, like:
-
 function doAnotherThing(FeatureABC) {
   var helper = FeatureABC || function () {};
   var val = helper();

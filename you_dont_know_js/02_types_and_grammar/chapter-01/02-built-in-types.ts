@@ -15,7 +15,6 @@
 
 // the 'typeof' operator inspects the type of the given value, and always returns one of seven string values
 // surprisingly, there’s not an exact 1-to-1 match with the seven built-in types we just listed:
-
 typeof undefined === "undefined"; // true
 typeof true === "boolean"; // true
 typeof 42 === "number"; // true
@@ -25,14 +24,12 @@ typeof Symbol() === "symbol"; // true
 
 // as you may have noticed, I excluded null from the above listing
 // it’s special—special in the sense that it’s buggy when combined with the typeof operator:
-
 typeof null === "object"; // true
 
 // it would have been nice (and correct!) if it returned "null", but this original bug in JS has persisted for nearly two decades
 // and will likely never be fixed because there’s so much existing web content that relies on its buggy behavior that “fixing” the bug would create more “bugs” and break a lot of web software
 
 // if you want to test for a null value using its type, you need a compound condition:
-
 var a = null;
 !a && typeof a === "object"; // true
 
@@ -46,7 +43,6 @@ typeof function a() {} === "function"; // true
 
 // the fact that functions are actually objects is quite useful
 // most importantly, they can have properties - for example:
-
 function sum(numOne, numTwo) {}
 
 // the function object has a length property set to the number of formal parameters it is declared with
