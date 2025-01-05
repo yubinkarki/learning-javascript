@@ -1,8 +1,11 @@
 {
+  "semi": true,
   "tabWidth": 2,
   "endOfLine": "lf",
   "printWidth": 120,
+  "proseWrap": "never",
   "singleQuote": false,
   "bracketSpacing": true,
+  "arrowParens": "always",
   "bracketSameLine": false
 }
