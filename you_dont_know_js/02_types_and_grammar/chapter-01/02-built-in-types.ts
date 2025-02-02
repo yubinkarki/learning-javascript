@@ -2,7 +2,7 @@
 
 /* BUILT-IN TYPES */
 
-// JS defines seven built-int types:
+// JS defines seven built-in types:
 //  null
 //  undefined
 //  string
