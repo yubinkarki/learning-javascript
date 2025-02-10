@@ -11,7 +11,7 @@ class CacheFibClass {
    * @param num - The position in the Fibonacci sequence.
    * @returns The Fibonacci number at the given position.
    */
-  public calculate = function (num: number): number {
+  public calculate(num: number): number {
     if (num === 2) {
       CacheFibClass.fibCache.set(num, 1);
       return 1;
@@ -31,7 +31,7 @@ class CacheFibClass {
     CacheFibClass.fibCache.set(num, result);
 
     return result;
-  };
+  }
 
   /**
    * Returns a string representation of the Fibonacci sequence, sorted in ascending order, using the cached values.

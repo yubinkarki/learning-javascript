@@ -6,7 +6,7 @@ class PlainFibClass {
    * @param num - The position in the Fibonacci sequence.
    * @returns The Fibonacci number at the given position.
    */
-  public calculate = function (num: number): number {
+  public calculate(num: number): number {
     if (num === 2) return 1;
 
     if (num === 1) return 0;
@@ -16,11 +16,11 @@ class PlainFibClass {
     const result = this.calculate(num - 1) + this.calculate(num - 2);
 
     return result;
-  };
+  }
 }
 
 const plainFib: PlainFibClass = new PlainFibClass();
-const numberToCal: number = 32;
+const numberToCal: number = 30;
 
 console.time("⌛️ fib calculation time");
 const plainFibResult = plainFib.calculate(numberToCal);
