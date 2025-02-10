@@ -37,7 +37,7 @@ class CacheFibClass {
    * Returns a string representation of the Fibonacci sequence, sorted in ascending order, using the cached values.
    * @returns A comma-separated string of Fibonacci numbers with spaces after the commas.
    */
-  public showSequence = function (): string {
+  public showSequence(): string {
     const cacheValues: MapIterator<number> = this.fibCache.values();
     const cacheValueList: number[] = Array.from(cacheValues).sort((a, b) => a - b);
 
@@ -46,7 +46,7 @@ class CacheFibClass {
       const secondHalf: string = cacheValueList.slice(-2).join(", ");
       return firstHalf + " . . . " + secondHalf;
     } else return cacheValueList.join(", ");
-  };
+  }
 }
 
 const fib: CacheFibClass = new CacheFibClass();

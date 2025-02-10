@@ -13,9 +13,7 @@ class PlainFibClass {
 
     console.log(">>", num);
 
-    const result = this.calculate(num - 1) + this.calculate(num - 2);
-
-    return result;
+    return this.calculate(num - 1) + this.calculate(num - 2);
   }
 }
 
