@@ -4,7 +4,7 @@ class CacheFibClass {
   /**
    * Cache for storing calculated Fibonacci numbers.
    */
-  private static fibCache: Map<number, number> = new Map();
+  private fibCache: Map<number, number> = new Map();
 
   /**
    * Recursively calculates the Fibonacci number for the given position.
@@ -13,22 +13,22 @@ class CacheFibClass {
    */
   public calculate(num: number): number {
     if (num === 2) {
-      CacheFibClass.fibCache.set(num, 1);
+      this.fibCache.set(num, 1);
       return 1;
     }
 
     if (num === 1) {
-      CacheFibClass.fibCache.set(num, 0);
+      this.fibCache.set(num, 0);
       return 0;
     }
 
     console.log(">>", num);
 
-    if (CacheFibClass.fibCache.has(num)) return CacheFibClass.fibCache.get(num)!;
+    if (this.fibCache.has(num)) return this.fibCache.get(num)!;
 
     const result = this.calculate(num - 1) + this.calculate(num - 2);
 
-    CacheFibClass.fibCache.set(num, result);
+    this.fibCache.set(num, result);
 
     return result;
   }
@@ -38,7 +38,7 @@ class CacheFibClass {
    * @returns A comma-separated string of Fibonacci numbers with spaces after the commas.
    */
   public showSequence = function (): string {
-    const cacheValues: MapIterator<number> = CacheFibClass.fibCache.values();
+    const cacheValues: MapIterator<number> = this.fibCache.values();
     const cacheValueList: number[] = Array.from(cacheValues).sort((a, b) => a - b);
 
     if (cacheValueList.length > 10) {
