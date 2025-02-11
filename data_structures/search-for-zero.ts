@@ -29,46 +29,48 @@ Output 2:
 > No 
 */
 
-function checkForZero(numList: number[]): "Yes" | "No" {
-  if (numList.length === 0) throw new Error("Invalid input");
+{
+  function checkForZero(numList: number[]): "Yes" | "No" {
+    if (numList.length === 0) throw new Error("Invalid input");
 
-  const digitToCheck: string = "0";
-  const stringNumList: string[] = [];
+    const digitToCheck: string = "0";
+    const stringNumList: string[] = [];
 
-  // convert each number from the input to string
-  numList.forEach((item) => {
-    const stringNum: string = item.toString();
+    // convert each number from the input to string
+    numList.forEach((item) => {
+      const stringNum: string = item.toString();
 
-    if (stringNum.length === 1) stringNumList.push(stringNum);
+      if (stringNum.length === 1) stringNumList.push(stringNum);
 
-    if (stringNum.length > 1) {
-      for (let i = 0; i < stringNum.length; i++) {
-        stringNumList.push(stringNum[i]);
+      if (stringNum.length > 1) {
+        for (let i = 0; i < stringNum.length; i++) {
+          stringNumList.push(stringNum[i]);
+        }
       }
-    }
-  });
+    });
 
-  const zeroExists: boolean = stringNumList.includes(digitToCheck);
+    const zeroExists: boolean = stringNumList.includes(digitToCheck);
 
-  return zeroExists ? "Yes" : "No";
-}
+    return zeroExists ? "Yes" : "No";
+  }
 
-// function checkForZero(numList: number[]): "Yes" | "No" {
-//   if (numList.length === 0) {
-//     throw new Error("Invalid input");
-//   }
+  // function checkForZero(numList: number[]): "Yes" | "No" {
+  //   if (numList.length === 0) {
+  //     throw new Error("Invalid input");
+  //   }
 
-//   const zeroExists: boolean = numList.some((num: number) =>
-//     num.toString().includes("0")
-//   );
+  //   const zeroExists: boolean = numList.some((num: number) =>
+  //     num.toString().includes("0")
+  //   );
 
-//   return zeroExists ? "Yes" : "No";
-// }
+  //   return zeroExists ? "Yes" : "No";
+  // }
 
-const numberList: number[] = [3231, 231, 21, 40123];
+  const numberList: number[] = [3231, 231, 21, 40123];
 
-try {
-  console.log(checkForZero(numberList));
-} catch (e: unknown) {
-  console.error(e);
+  try {
+    console.log(checkForZero(numberList));
+  } catch (e: unknown) {
+    console.error(e);
+  }
 }

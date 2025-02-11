@@ -31,22 +31,24 @@ Output: ""
 //   return firstString.substring(0, gcdLength);
 // }
 
-function uncommonString(firstString: string, secondString: string): string {
-  if (firstString.concat(secondString) !== secondString.concat(firstString)) return "";
+{
+  function uncommonString(firstString: string, secondString: string): string {
+    if (firstString.concat(secondString) !== secondString.concat(firstString)) return "";
 
-  if (firstString.startsWith(secondString)) {
-    const modifiedString: string = firstString.slice(secondString.length);
-    return modifiedString;
+    if (firstString.startsWith(secondString)) {
+      const modifiedString: string = firstString.slice(secondString.length);
+      return modifiedString;
+    }
+
+    return "";
   }
 
-  return "";
-}
+  try {
+    const myFirstString: string = "ABCABC";
+    const mySecondString: string = "ABC";
 
-try {
-  const myFirstString: string = "ABCABC";
-  const mySecondString: string = "ABC";
-  
-  console.log(uncommonString(myFirstString, mySecondString));
-} catch (e) {
-  console.error(e);
+    console.log(uncommonString(myFirstString, mySecondString));
+  } catch (e) {
+    console.error(e);
+  }
 }

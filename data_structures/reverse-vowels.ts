@@ -17,37 +17,39 @@ Input: s = "leetcode"
 Output: "leotcede" 
 */
 
-function reverseVowels(stringToReverse: string): string {
-  if (stringToReverse.length === 0) throw new Error("Invalid input");
+{
+  function reverseVowels(stringToReverse: string): string {
+    if (stringToReverse.length === 0) throw new Error("Invalid input");
 
-  const vowelsInString: string[] = [];
+    const vowelsInString: string[] = [];
 
-  const vowels: Set<string> = new Set(["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]);
+    const vowels: Set<string> = new Set(["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]);
 
-  for (const char of stringToReverse) if (vowels.has(char)) vowelsInString.push(char);
+    for (const char of stringToReverse) if (vowels.has(char)) vowelsInString.push(char);
 
-  if (vowelsInString.length === 0) return stringToReverse;
+    if (vowelsInString.length === 0) return stringToReverse;
 
-  const reversedVowelsInString: string[] = vowelsInString.reverse();
+    const reversedVowelsInString: string[] = vowelsInString.reverse();
 
-  const letterList: string[] = Array.from(stringToReverse);
+    const letterList: string[] = Array.from(stringToReverse);
 
-  let vowelIndex: number = 0;
+    let vowelIndex: number = 0;
 
-  for (let i = 0; i <= letterList.length; i++) {
-    if (vowels.has(letterList[i])) {
-      letterList[i] = reversedVowelsInString[vowelIndex];
-      vowelIndex++;
+    for (let i = 0; i <= letterList.length; i++) {
+      if (vowels.has(letterList[i])) {
+        letterList[i] = reversedVowelsInString[vowelIndex];
+        vowelIndex++;
+      }
     }
+
+    return letterList.join("");
   }
 
-  return letterList.join("");
-}
+  try {
+    const inputString: string = "IceCreAm";
 
-try {
-  const inputString: string = "IceCreAm";
-  
-  console.log(reverseVowels(inputString));
-} catch (e) {
-  console.error(e);
+    console.log(reverseVowels(inputString));
+  } catch (e) {
+    console.error(e);
+  }
 }

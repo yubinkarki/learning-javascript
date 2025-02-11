@@ -18,35 +18,37 @@ Explanation:
 The target string aeppl is a shuffled version of the word apple in the list.
 */
 
-function findWord(target: string, words: string[]) {
-  if (!target || !words) throw new Error("Invalid input");
+{
+  function findWord(target: string, words: string[]) {
+    if (!target || !words) throw new Error("Invalid input");
 
-  const targetWordCount: Record<string, number> = {};
+    const targetWordCount: Record<string, number> = {};
 
-  for (const letter of target) targetWordCount[letter] = (targetWordCount[letter] || 0) + 1;
+    for (const letter of target) targetWordCount[letter] = (targetWordCount[letter] || 0) + 1;
 
-  const targetWordKeys: string[] = Object.keys(targetWordCount);
+    const targetWordKeys: string[] = Object.keys(targetWordCount);
 
-  const filteredList: Record<string, number>[] = words.map((item) => {
-    const itemCount = {};
+    const filteredList: Record<string, number>[] = words.map((item) => {
+      const itemCount = {};
 
-    for (let i = 0; i < item.length; i++) itemCount[item[i]] = (itemCount[item[i]] || 0) + 1;
+      for (let i = 0; i < item.length; i++) itemCount[item[i]] = (itemCount[item[i]] || 0) + 1;
 
-    return itemCount;
-  });
+      return itemCount;
+    });
 
-  const findWordIndex: number = filteredList.findIndex((item) => {
-    const itemKeys: string[] = Object.keys(item);
+    const findWordIndex: number = filteredList.findIndex((item) => {
+      const itemKeys: string[] = Object.keys(item);
 
-    if (itemKeys.length !== targetWordKeys.length) return false;
+      if (itemKeys.length !== targetWordKeys.length) return false;
 
-    return itemKeys.every((key: string) => Object.hasOwn(targetWordCount, key) && item[key] === targetWordCount[key]);
-  });
+      return itemKeys.every((key: string) => Object.hasOwn(targetWordCount, key) && item[key] === targetWordCount[key]);
+    });
 
-  return findWordIndex === -1 ? "Match not found" : `Match found: ${words[findWordIndex]}`;
+    return findWordIndex === -1 ? "Match not found" : `Match found: ${words[findWordIndex]}`;
+  }
+
+  const targetWord = "aeppl";
+  const wordList: string[] = ["apple", "banana", "grape"];
+
+  console.log(findWord(targetWord, wordList));
 }
-
-const targetWord = "aeppl";
-const wordList: string[] = ["orange", "banana", "grape"];
-
-console.log(findWord(targetWord, wordList));
