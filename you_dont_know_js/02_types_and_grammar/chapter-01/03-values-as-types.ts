@@ -40,12 +40,15 @@ console.log("Type of gender", typeof gender); // undefined
 
 console.log("Accessing undeclared variable 'location'", location); // ReferenceError: location is not defined
 
-//an annoying confusion is the error message that browsers assign to this condition
-// as you can see, the message is “location is not defined”, which is of course very easy and reasonable to confuse with “location is undefined”
+// an annoying confusion is the error message that browsers assign to this condition
+// as you can see, the message is “location is not defined”
+// which is of course very easy and reasonable to confuse with “location is undefined”
 // yet again, “undefined” and “is not defined” are very different things
-// it’d be nice if the browsers said something like “location is not found” or “location is not declared” to reduce the confusion!
+// it’d be nice if the browsers said something like “location is not found”
+// or “location is not declared” to reduce the confusion!
 
-// there’s also a special behavior associated with typeof as it relates to undeclared variables that even further reinforces the confusion
+// there’s also a special behavior associated with typeof as it relates to undeclared variables
+// that even further reinforces the confusion
 
 var x;
 console.log("Type of x", typeof x); // "undefined"
@@ -54,18 +57,23 @@ console.log("Type of y", typeof y); // "undefined"
 // the typeof operator returns "undefined" even for “undeclared” (or “not defined”) variables
 // notice that there was no error thrown when we executed typeof y, even though y is an undeclared variable
 // this is a special safety guard in the behavior of typeof
-// similar to above, it would have been nice if typeof used with an undeclared variable returned “undeclared” instead of conflating the result value with the different “undefined” case
+// similar to above, it would have been nice if typeof used with an undeclared variable returned “undeclared”
+// instead of conflating the result value with the different “undefined” case
 
 /* TYPEOF UNDECLARED */
 
 // nevertheless, this safety guard is a useful feature when dealing with JS in the browser
 // where multiple script files can load variables into the shared global namespace
 
-// s a simple example, imagine having a “debug mode” in your program that is controlled by a global variable (flag) called DEBUG
-// you’d want to check if that variable was declared before performing a debug task like logging a message to the console
-// a top-level global var DEBUG = true declaration would only be included in a “debug.js” file, which you only load into the browser when you’re in development/testing, but not in production
+// as a simple example, imagine having a “debug mode” in your program
+// that is controlled by a global variable (flag) called DEBUG
+// you’d want to check if that variable was declared before performing a debug task
+// like logging a message to the console
+// a top-level global var DEBUG = true declaration would only be included in a “debug.js” file
+// which you only load into the browser when you’re in development/testing, but not in production
 
-// however, you have to take care in how you check for the global DEBUG variable in the rest of your application code so that you don’t throw a ReferenceError
+// however, you have to take care in how you check for the global DEBUG variable
+// in the rest of your application code so that you don’t throw a ReferenceError
 // the safety guard on typeof is our friend in this case:
 
 // oops, this would throw an error!
@@ -78,7 +86,8 @@ if (typeof DEBUG !== "undefined") {
 }
 
 // this sort of check is useful even if you’re not dealing with user-defined variables (like DEBUG)
-// if you are doing a feature check for a built-in API, you may also find it helpful to check without throwing an error:
+// if you are doing a feature check for a built-in API
+// you may also find it helpful to check without throwing an error:
 
 if (typeof atob === "undefined") {
   atob = function () {};
