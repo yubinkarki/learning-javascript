@@ -33,7 +33,9 @@ switch (a) {
 }
 
 // the break is important if you want only the statement(s) in one case to run
-// if you omit break from a case, and that case matches or runs, execution will continue with the next case’s statements regardless of that case matching
+// if you omit break from a case
+// and that case matches or runs
+// execution will continue with the next case’s statements regardless of that case matching
 // this so called “fall through” is sometimes useful/desired
 
 switch (a) {
