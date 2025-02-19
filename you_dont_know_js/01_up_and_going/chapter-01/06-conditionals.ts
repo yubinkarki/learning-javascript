@@ -30,8 +30,10 @@ if (anotherAmount < anotherBankBalance) {
 }
 
 // values that aren't of an expected type are often coerced to that type
-// the if statement expects a boolean, but if you pass it something that's not already boolean, coercion will occur
-// JS defines a list of specific values that are considered 'falsy' because when coerced to a boolean, they become false
+// the if statement expects a boolean
+// but if you pass it something that's not already boolean, coercion will occur
+// JS defines a list of specific values that are considered 'falsy'
+// because when coerced to a boolean, they become false
 // these include values like 0 and ""
 // any other value not on the 'falsy' list is automatically 'truthy'
 // conditionals exist in other forms besides the if statement
