@@ -15,7 +15,7 @@ Output 1:
 Match Found: "apple"
 
 Explanation:
-The target string aeppl is a shuffled version of the word apple in the list.
+The target string aeppl is a shuffled version of the word apple in the list
 */
 
 {

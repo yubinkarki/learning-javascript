@@ -9,24 +9,11 @@ Each input should be provided in a new line
 
 Example:
 
-Input 1:
-> 3  
-> 1  
-> 2  
-> 205
+Input 1: [3, 1, 2, 205]
+Output 1: Yes
 
-Output 1:
-> Yes
-
-Input 2:
-> 4  
-> 1  
-> 2  
-> 3  
-> 99
-
-Output 2:
-> No 
+Input 2: [4, 1, 2, 3, 99]
+Output 2: No
 */
 
 {
