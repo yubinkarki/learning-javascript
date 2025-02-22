@@ -35,7 +35,8 @@ console.log("Type of gender", typeof gender); // undefined
 
 // it’s tempting for most developers to think of the word “undefined” as a synonym for “undeclared"
 // however, in JS, these two concepts are quite different
-// an “undefined” variable is one that has been declared in the accessible scope, but at the moment has no other value in it
+// an “undefined” variable is one that has been declared in the accessible scope
+// but at the moment has no other value in it
 // by contrast, an “undeclared” variable is one that has not been formally declared in the accessible scope
 
 console.log("Accessing undeclared variable 'location'", location); // ReferenceError: location is not defined
@@ -93,7 +94,10 @@ if (typeof atob === "undefined") {
   atob = function () {};
 }
 
-// another way of doing these checks against global variables but without the safety guard feature of typeof is to observe that all global variables are also properties of the global object, which in the browser is basically the window object
+// another way of doing these checks against global variables
+// but without the safety guard feature of typeof
+// is to observe that all global variables are also properties of the global object
+// which in the browser is basically the window object
 // so, the above checks could have been done (quite safely) as:
 
 // if (window.DEBUG) {
@@ -102,17 +106,31 @@ if (typeof atob === "undefined") {
 // if (window.atob) {
 // }
 
-// unlike referencing undeclared variables, there is no ReferenceError thrown if you try to access an object property (even on the global window object) that doesn’t exist
-// on the other hand, manually referencing the global variable with a window reference is something some developers prefer to avoid, especially if your code needs to run in multiple JS environments (not just browsers, but server-side node.js, for instance), where the global variable may not always be called window
-// technically, this safety guard on typeof is useful even if you’re not using global variables, though these circumstances are less common, and some developers may find this design approach less desirable
-// imagine a utility function that you want others to copy-and-paste into their programs or modules, in which you want to check to see if the including program has defined a certain variable (so that you can use it) or not:
+// unlike referencing undeclared variables
+// there is no ReferenceError thrown if you try to access an object property
+// (even on the global window object) that doesn’t exist
+// on the other hand, manually referencing the global variable with a window reference
+// is something some developers prefer to avoid
+// especially if your code needs to run in multiple JS environments
+// (not just browsers, but server-side node.js, for instance)
+// where the global variable may not always be called window
+// technically, this safety guard on typeof is useful even if you’re not using global variables
+// though these circumstances are less common
+// and some developers may find this design approach less desirable
+// imagine a utility function that you want others to copy-and-paste into their programs or modules
+// in which you want to check to see if the including program has defined a certain variable
+// (so that you can use it) or not:
+
 function doSomethingCool() {
   var helper = typeof FeatureXYZ !== "undefined" ? FeatureXYZ : function () {};
   var val = helper();
 }
 
-// doSomethingCool() tests for a variable called FeatureXYZ, and if found, uses it, but if not, uses its own
-// now, if someone includes this utility into their module/program, it safely checks if they’ve defined FeatureXYZ or not:
+// doSomethingCool() tests for a variable called FeatureXYZ
+// and if found, uses it, but if not, uses its own
+// now, if someone includes this utility into their module/program
+// it safely checks if they’ve defined FeatureXYZ or not:
+
 (function () {
   function FeatureXYZ() {}
 
@@ -124,10 +142,16 @@ function doSomethingCool() {
   doSomethingCool();
 })();
 
-// here, FeatureXYZ is not at all a global variable, but we’re still using the safety guard of typeof to make it safe to check for
-// and importantly, here there is no object we can use (like we did for global variables with window.___) to make the check, so typeof is quite helpful
+// here, FeatureXYZ is not at all a global variable
+// but we’re still using the safety guard of typeof to make it safe to check for
+// and importantly, here there is no object we can use
+// (like we did for global variables with window.___) to make the check, so typeof is quite helpful
 
-// other developers would prefer a design pattern called “dependency injection” where instead of doSomethingCool() inspecting implicitly for FeatureXYZ to be defined outside/around it, it would need to have the dependency explicitly passed in, like:
+// other developers would prefer a design pattern called “dependency injection”
+// where instead of doSomethingCool() inspecting implicitly for FeatureXYZ
+// to be defined outside/around it
+// it would need to have the dependency explicitly passed in, like:
+
 function doAnotherThing(FeatureABC) {
   var helper = FeatureABC || function () {};
   var val = helper();
