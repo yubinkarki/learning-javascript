@@ -2,16 +2,17 @@
 
 /* NATIVE PROTOTYPES */
 
-// each of the built-in native constructors has its own .prototype object — Array.prototype, String.prototype, etc
+// each of the built-in native constructors has its own .prototype object
+// Array.prototype, String.prototype, etc
 // these objects contain behavior unique to their particular object sub‐type
 // for example, all string objects, and by extension (via boxing) string primitives
 // have access to default behavior as methods defined on the String.prototype object
 
-// String#indexOf(..) Find the position in the string of another substring
-// String#charAt(..) Access the character at a position in the string
-// String#substr(..), String#substring(..), and String#slice(..) Extract a portion of the string as a new string
-// String#toUpperCase() and String#toLowerCase() Create a new string that’s converted to either uppercase or lowercase
-// String#trim() Creates a new string that's stripped of any leading or trailing whitespaces
+// String#indexOf(..) - find the position in the string of another substring
+// String#charAt(..) - access the character at a position in the string
+// String#substr(..), String#substring(..), and String#slice(..) - extract a portion of the string as a new string
+// String#toUpperCase() and String#toLowerCase() - create a new string that’s converted to either uppercase or lowercase
+// String#trim() - creates a new string that's stripped of any leading or trailing whitespaces
 
 // none of the methods modify the string in place
 // modifications (like case conversion or trimming) create a new value from the existing value

@@ -2,7 +2,8 @@
 
 /* NATIVES */
 
-// several times in Chapters 1 and 2, we alluded to various built-ins, usually called “natives,” like String and Number
+// several times in Chapters 1 and 2, we alluded to various built-ins
+// usually called “natives,” like String and Number
 // let’s examine those in detail now
 
 // here's a list of the most commonly used natives:
@@ -31,10 +32,12 @@ console.log("Type of a", typeof a); // "object" ... not "string"
 console.log("a Instance of String", a instanceof String); // true
 console.log("Object.prototype.toString.call(a)", Object.prototype.toString.call(a)); // "[object String]"
 
-// the result of the constructor form of value creation is an object wrapper around the primitive ("abc") value
+// the result of the constructor form of value creation
+// is an object wrapper around the primitive ("abc") value
 // importantly, typeof shows that these objects are not their own special types
 // but more appropriately, they are subtypes of the object type
 // the object wrapper can further be observed with:
 console.log("Value of a", a); // [String: 'abc']
 
-// new String("abc") creates a string wrapper object around "abc", not just the primitive "abc" value itself
+// new String("abc") creates a string wrapper object around "abc"
+// not just the primitive "abc" value itself

@@ -2,7 +2,8 @@
 
 /* Object(..), Function(..), and RegExp(..) */
 
-// the Object(..)/Function(..)/RegExp(..) constructors are also generally optional (and thus should usually be avoided unless specifically called for)
+// the Object(..)/Function(..)/RegExp(..) constructors are also generally optional
+// (and thus should usually be avoided unless specifically called for)
 
 var c = new Object();
 c.foo = "bar";
@@ -67,7 +68,8 @@ if (!Date.now) {
 console.log("Date.now()", Date.now(), typeof Date.now()); // 1737991610417 number
 
 // the Error(..) constructor behaves the same with the new keyword present or omitted
-// the main reason you’d want to create an error object is that it captures the current execution stack context into the object
+// the main reason you’d want to create an error object
+// is that it captures the current execution stack context into the object
 // (in most JS engines, revealed as a read-only .stack property once constructed)
 // this stack context includes the function call stack and the line number where the error object was created
 // which makes debugging that error much easier
@@ -81,25 +83,31 @@ function foo(x) {
 
 // error object instances generally have at least a message property, and sometimes other properties
 // (which you should treat as read-only), like type
-// however, other than inspecting the above-mentioned stack property, it’s usually best to just call toString() on the error object to get a friendly formatted error message
+// however, other than inspecting the above-mentioned stack property
+// it’s usually best to just call toString() on the error object to get a friendly formatted error message
 
 /* Symbol(..) */
 
 // new as of ES6, an additional primitive value type has been added, called “Symbol”
-// Symbols are special "unique" (not strictly guaranteed) values that can be used as properties on objects with little fear of any collision
-// they're primarily designed for special built-in behaviors of ES6 constructs, but you can also define your own Symbols
+// Symbols are special "unique" (not strictly guaranteed)
+// values that can be used as properties on objects with little fear of any collision
+// they're primarily designed for special built-in behaviors of ES6 constructs
+// but you can also define your own Symbols
 
-// symbols can be used as property names, but you cannot see or access the actual value of a symbol from your program
+// symbols can be used as property names
+// but you cannot see or access the actual value of a symbol from your program
 // nor from the developer console
 // if you evaluate a symbol in the developer console, what’s shown looks like Symbol(Symbol.create)
 
-// there are several predefined symbols in ES6, accessed as static properties of the Symbol function object
+// there are several predefined symbols in ES6
+// accessed as static properties of the Symbol function object
 // like Symbol.create, Symbol.iterator, etc
 // to use them, do something like:
 // obj[Symbol.iterator] = function () {};
 
 // to define your own custom symbols, use the Symbol(..) native
-// the Symbol(..) native “constructor” is unique in that you’re not allowed to use new with it, as doing so will throw an error
+// the Symbol(..) native “constructor” is unique in that you’re not allowed to use new with it
+// as doing so will throw an error
 
 var mysym = Symbol("my own symbol");
 console.log("My own symbol", mysym); // Symbol(my own symbol)
@@ -111,7 +119,8 @@ a[mysym] = "foobar";
 
 console.log("Object.getOwnPropertySymbols(a)", Object.getOwnPropertySymbols(a)); // [Symbol(my own symbol)]
 
-// while symbols are not actually private (Object.getOwnPropertySymbols(..) reflects on the object and reveals the symbols quite publicly)
+// while symbols are not actually private (Object.getOwnPropertySymbols(..)
+// reflects on the object and reveals the symbols quite publicly
 // using them for private or special properties is likely their primary use case
 // for most developers, they may take the place of property names with underscore (_) prefixes
 // which are almost always by convention signals to say
