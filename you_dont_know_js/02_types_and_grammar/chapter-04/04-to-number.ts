@@ -13,13 +13,16 @@ console.log(1 + undefined); // NaN
 console.log(1 + null); // 1
 console.log(1 + NaN); // NaN
 
-// ToNumber for a string value essentially works for the most part like the rules/syntax for numeric literals
+// ToNumber for a string value essentially works for the most part
+// like the rules/syntax for numeric literals
 // if it fails, the result is NaN (instead of a syntax error as with number literals)
-// one difference is that 0-prefixed octal numbers are not handled as octals in this operation (just as normal base-10 decimals)
+// one difference is that 0-prefixed octal numbers are not handled as octals
+// in this operation (just as normal base-10 decimals)
 // though such octals are valid as number literals
 
 // objects (and arrays) will first be converted to their primitive value equivalent
-// and the resulting value (if a primitive but not already a number) is coerced to a number according to the ToNumber rules
+// and the resulting value (if a primitive but not already a number)
+// is coerced to a number according to the ToNumber rules
 
 // to convert to this primitive value equivalent
 // the ToPrimitive abstract operation (ES5 spec, section 9.1) will consult the value in question

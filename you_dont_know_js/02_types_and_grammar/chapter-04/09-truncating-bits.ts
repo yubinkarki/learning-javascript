@@ -28,5 +28,6 @@ console.log(~~1e20 / 10); // 166199296
 console.log(1e20 | (0 / 10)); // 1661992960
 console.log((1e20 | 0) / 10); // 166199296
 
-// just as with all other advice here, use ~ and ~~ as explicit mechanisms for “coercion” and value transformation
+// just as with all other advice here, use ~ and ~~ as
+// explicit mechanisms for “coercion” and value transformation
 // only if everyone who reads/writes such code is properly aware of how these operators work!

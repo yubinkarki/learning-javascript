@@ -2,20 +2,24 @@
 
 /* COERCION */
 
-// now that we much more fully understand JavaScript’s types and values, we turn our attention to a very controversial topic: coercion
+// now that we much more fully understand JavaScript’s types and values
+// we turn our attention to a very controversial topic: coercion
 
 /* CONVERTING VALUES */
 
 // converting a value from one type to another is often called "type casting" when done explicitly
 // and "coercion" when done implicitly (forced by the rules of how a value is used)
-// it may not be obvious but JS coercions always result in one of the scalar primitives values like string, number or boolean
+// it may not be obvious but JS coercions always result in one of the scalar primitives values
+// like string, number or boolean
 // there is no coercion that results in a complex value like object or function
 // another way these terms are often distinguished is as follows:
 // “type casting” (or “type conversion”) occurs in statically typed languages at compile time
 // while “type coercion” is a runtime conversion for dynamically typed languages
 // the difference should be obvious:
-// “explicit coercion” is when it is obvious from looking at the code that a type conversion is intentionally occurring
-// whereas “implicit coercion” is when the type conversion will occur as a less obvious side effect of some other intentional operation
+// “explicit coercion” is when it is obvious from looking at the code
+// that a type conversion is intentionally occurring
+// whereas “implicit coercion” is when the type conversion will occur as a less obvious side effect
+// of some other intentional operation
 
 // for example:
 var a = 42;

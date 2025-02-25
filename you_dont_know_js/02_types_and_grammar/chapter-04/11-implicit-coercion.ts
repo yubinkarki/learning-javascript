@@ -12,6 +12,7 @@
 
 // the + operator is overloaded to serve the purposes of both number addition and string concatenation
 // so how does JS know which type of operation you want to use?
+
 // consider:
 var a = "42";
 var b = "0";
@@ -65,8 +66,10 @@ var g = {
 console.log("g + '' >>", g + ""); // "42" - calls valueOf first
 console.log("String(g) >>", String(g)); // "4" - calls toString directly
 
-// this sort of gotcha won’t bite you unless you’re really trying to create confusing data structures and operations
-// but you should be careful if you’re defining both your own valueOf() and toString() methods for some object
+// this sort of gotcha won’t bite you
+// unless you’re really trying to create confusing data structures and operations
+// but you should be careful
+// if you’re defining both your own valueOf() and toString() methods for some object
 // as how you coerce the value could affect the outcome
 
 // what about the other direction? How can we implicitly coerce from string to number?

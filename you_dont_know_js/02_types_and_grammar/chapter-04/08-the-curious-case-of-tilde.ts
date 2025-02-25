@@ -2,7 +2,8 @@
 
 /* THE CURIOUS CASE OF THE ~ */
 
-// one coercive JS operator that is often overlooked and usually very confused is the tilde ~ operator (aka “bitwise NOT”)
+// one coercive JS operator that is often overlooked and
+// usually very confused is the tilde ~ operator (aka “bitwise NOT”)
 // many of those who even understand what it does will often still want to avoid it
 // but sticking to the spirit of our approach in this book and series
 // let’s dig into it to find out if ~ has anything useful to give us
@@ -44,7 +45,8 @@ console.log("0 | -Infinity >>", 0 | -Infinity); // 0
 // that’s some pretty specialized, nuanced stuff
 // it’s pretty rare for JS developers to need to reason about individual bits
 
-// another way of thinking about the definition of ~ comes from old-school computer science/discrete mathematics:
+// another way of thinking about the definition of ~ comes from
+// old-school computer science/discrete mathematics:
 // ~ performs two’s complement
 // great, thanks, that’s totally clearer!
 
@@ -53,9 +55,11 @@ console.log("0 | -Infinity >>", 0 | -Infinity); // 0
 console.log(~42); // -(42+1) ==> -43
 
 // consider -(x+1)
-// what’s the only value that can you can perform that operation on that will produce a 0 (or -0 technically!) result? -1
+// what’s the only value that can you can perform that operation on
+// that will produce a 0 (or -0 technically!) result? -1
 // in other words
-// ~ used with a range of number values will produce a falsy (easily coercible to false) 0 value for the -1 input value
+// ~ used with a range of number values will produce a falsy
+// (easily coercible to false) 0 value for the -1 input value
 // and any other truthy number otherwise
 
 // why is that relevant?
@@ -63,7 +67,8 @@ console.log(~42); // -(42+1) ==> -43
 // -1 is commonly called a “sentinel value”
 // which basically means a value that’s given an arbitrary semantic meaning
 // within the greater set of values of its same type (numbers)
-// the C-language uses -1 sentinel values for many functions that return >= 0 values for “success” and -1 for “failure”
+// the C-language uses -1 sentinel values for many functions
+// that return >= 0 values for “success” and -1 for “failure”
 
 // JS adopted this precedent when defining the string operation indexOf(..)
 // which searches for a substring and if found returns its zero-based index position
@@ -97,7 +102,8 @@ if (a.indexOf("he") < 0) {
 // i would prefer to hide such a detail
 
 // and now, finally, we see why ~ could help us!
-// using ~ with indexOf() “coerces” (actually just transforms) the value to be appropriately boolean-coercible:
+// using ~ with indexOf() “coerces” (actually just transforms)
+// the value to be appropriately boolean-coercible:
 console.log("indexOf('ll')", ~a.indexOf("ll")); // -3
 
 if (~a.indexOf("h")) {
@@ -107,7 +113,8 @@ if (~a.indexOf("h")) {
 // ~ takes the return value of indexOf(..) and transforms it
 // for the “failure” -1 we get the falsy 0, and every other value is truthy
 
-// technically, `if(~a.indexOf(..))` is still relying on implicit coercion of its resultant 0 to false or nonzero to true
+// technically, `if(~a.indexOf(..))` is still relying on implicit coercion
+// of its resultant 0 to false or nonzero to true
 // but overall, ~ still feels to me more like an explicit coercion mechanism
 // as long as you know what it’s intended to do in this idiom
 // i find this to be cleaner code than the previous >= 0 / == -1 clutter

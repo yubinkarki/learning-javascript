@@ -3,7 +3,8 @@
 /* EXPLICIT COERCION */
 
 // explicit coercion refers to type conversions that are obvious and explicit
-// there’s a wide range of type conversion usage that clearly falls under the explicit coercion category for most developers
+// there’s a wide range of type conversion usage
+// that clearly falls under the explicit coercion category for most developers
 
 /* EXPLICITLY: STRINGS <--> NUMBERS */
 
@@ -45,7 +46,8 @@ var i = "5.1";
 var j = 1 + +i;
 console.log("Value of j", j, typeof j);
 
-// you should strongly consider avoiding unary + (or -) coercion when it’s immediately adjacent to other operators
+// you should strongly consider avoiding unary + (or -)
+// coercion when it’s immediately adjacent to other operators
 // while the above works, it would almost universally be considered a bad idea
 // even d = +c (or d =+ c for that matter!) can far too easily be confused for d += c
 // which is entirely different!

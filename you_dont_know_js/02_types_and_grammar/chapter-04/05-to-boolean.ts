@@ -2,7 +2,8 @@
 
 /* ToBoolean */
 
-// first and foremost, JS has actual keywords true and false, and they behave exactly as you’d expect of boolean values
+// first and foremost, JS has actual keywords true and false
+// and they behave exactly as you’d expect of boolean values
 // it’s a common misconception that the values 1 and 0 are identical to true/false
 // while that may be true in other languages, in JS the numbers are numbers and the booleans are booleans
 // you can coerce 1 to true (and vice versa) or 0 to false (and vice versa)
@@ -11,13 +12,15 @@
 /* FALSY VALUES */
 
 // but that’s not the end of the story
-// we need to discuss how values other than the two booleans behave whenever you coerce to their boolean equivalent
+// we need to discuss how values other than the two booleans behave
+// whenever you coerce to their boolean equivalent
 // all of JavaScript’s values can be divided into two categories:
 // 1. values that will become false if coerced to boolean
 // 2. everything else (which will obviously become true)
 
 // i’m not just being facetious
-// the JS spec defines a specific narrow list of values that will coerce to false when coerced to a boolean value
+// the JS spec defines a specific narrow list of values
+// that will coerce to false when coerced to a boolean value
 // how do we know what the list of values is?
 // in the ES5 spec, section 9.2 defines a ToBoolean abstract operation
 // which says exactly what happens for all the possible values when you try to coerce them “to boolean”
@@ -46,7 +49,8 @@ console.log(Boolean(""));
 // i literally just said the spec calls all objects truthy, right?
 // there should be no such thing as a “falsy object”
 // what could that possibly even mean?
-// you might be tempted to think it means an object wrapper around a falsy value (such as "", 0, or false)
+// you might be tempted to think it means an object wrapper around a falsy value
+// (such as "", 0, or false)
 // but don’t fall into that trap
 
 // consider:
@@ -56,7 +60,7 @@ var c = new Number(0);
 
 console.log(a, typeof a, b, typeof b, c, typeof c); // [String: ''] object [Boolean: false] object [Number: 0] object
 
-// we know all three values here are objects (see Chapter 3) wrapped around obviously falsy values
+// we know all three values here are objects wrapped around obviously falsy values
 // but do these objects behave as true or as false? That’s easy to answer:
 var d = Boolean(a && b && c);
 
@@ -72,7 +76,8 @@ console.log("Boolean(a && b && c) >>", d); // true
 // a “falsy object” is a value that looks and acts like a normal object (properties, etc)
 // but when you coerce it to a boolean, it coerces to a false value
 // why!?
-// the most well-known case is document.all, an array-like (object) provided to your JS program by the DOM
+// the most well-known case is document.all
+// an array-like (object) provided to your JS program by the DOM
 // (not the JS engine itself)
 // which exposes elements in your page to your JS program
 // it used to behave like a normal object — it would act truthy
@@ -110,7 +115,8 @@ console.log("s >>", s); // true
 // in other words, the truthy list is infinitely long
 // it’s impossible to make such a list
 // you can only make a finite falsy list and consult it
-// take five minutes, write the falsy list on a Post-it note for your computer monitor, or memorize it if you prefer
+// take five minutes
+// write the falsy list on a post-it note for your computer monitor, or memorize it if you prefer
 // either way, you’ll easily be able to construct a virtual truthy list whenever you need it
 // by simply asking if it’s on the falsy list or not
 

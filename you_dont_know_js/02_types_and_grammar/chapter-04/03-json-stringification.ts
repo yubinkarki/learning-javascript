@@ -19,12 +19,15 @@ console.log(JSON.stringify(true)); // "true"
 // but what is JSON-safe? Any value that can be represented validly in a JSON representation
 // it may be easier to consider values that are not JSON-safe
 // some examples are undefineds, functions, (ES6+) symbols
-// and objects with circular references (where property references in an object structure create a never-ending cycle through each other)
+// and objects with circular references
+// (where property references in an object structure create a never-ending cycle through each other)
 // these are all illegal values for a standard JSON structure
 // mostly because they aren’t portable to other languages that consume JSON values
 
-// the JSON.stringify(..) utility will automatically omit undefined, function, and symbol values when it comes across them
-// if such a value is found in an array, that value is replaced by null (so that the array position information isn’t altered)
+// the JSON.stringify(..) utility will automatically omit
+// undefined, function, and symbol values when it comes across them
+// if such a value is found in an array
+// that value is replaced by null (so that the array position information isn’t altered)
 // if found as a property of an object, that property will simply be excluded
 
 // consider:
@@ -33,7 +36,8 @@ console.log(JSON.stringify(function () {})); // undefined
 console.log(JSON.stringify([1, undefined, function () {}, 4])); // "[1,null,null,4]"
 console.log(JSON.stringify({ a: 2, b: function () {} })); // "{"a":2}"
 
-// but if you try to JSON.stringify(..) an object with circular reference(s) in it, an error will be thrown
+// but if you try to JSON.stringify(..)
+// an object with circular reference(s) in it, an error will be thrown
 // JSON stringification has the special behavior that if an object value has a toJSON() method defined
 // this method will be called first to get a value to use for serialization
 

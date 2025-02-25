@@ -2,8 +2,10 @@
 
 /* EXPLICITLY PARSING NUMERIC STRINGS */
 
-// a similar outcome to coercing a string to a number can be achieved by parsing a number out of a string’s character contents
-// there are, however, distinct differences between this parsing and the type conversion we examined above
+// a similar outcome to coercing a string to a number
+// can be achieved by parsing a number out of a string’s character contents
+// there are, however, distinct differences between this parsing and
+// the type conversion we examined above
 
 // consider:
 var a = "42";
@@ -24,7 +26,8 @@ console.log(parseFloat("87458475.12312")); // 87458475.12312
 
 // parsing should not be seen as a substitute for coercion
 // these two tasks, while similar, have different purposes
-// parse a string as a number when you don’t know/care what other non-numeric characters there may be on the right-hand side
+// parse a string as a number when you don’t know/care what
+// other non-numeric characters there may be on the right-hand side
 // coerce a string (to a number) when the only acceptable values are numeric
 // and something like "42px" should be rejected as a number
 
@@ -75,7 +78,8 @@ console.log(Boolean(v)); // false
 // just like the unary + operator coerces a value to a number (see above)
 // the unary ! negate operator explicitly coerces a value to a boolean
 // the problem is that it also flips the value from truthy to falsy or vice versa
-// so, the most common way JS developers explicitly coerce to boolean is to use the !! double-negate operator
+// so, the most common way JS developers explicitly coerce to boolean
+// is to use the !! double-negate operator
 // because the second ! will flip the parity back to the original:
 
 console.log(!p, !!p); // false true

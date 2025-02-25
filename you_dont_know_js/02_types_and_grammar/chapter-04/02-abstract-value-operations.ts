@@ -5,13 +5,15 @@
 // before we can explore explicit versus implicit coercion, we need to learn the basic rules
 // that govern how values become either a string,number, or boolean
 // the ES5 spec in section 9 defines several“abstract operations” with the rules of value conversion
-// we will specifically pay attention to ToString, ToNumber, and ToBoolean, and to a lesser extent, ToPrimitive
+// we will specifically pay attention to
+// ToString, ToNumber, and ToBoolean, and to a lesser extent, ToPrimitive
 
 /* ToString */
 
 // when any non-string value is coerced to a string representation
 // the conversion is handled by the ToString abstract operation in section 9.8 of the specification
-// built-in primitive values have natural stringification: null becomes "null", undefined becomes "undefined"
+// built-in primitive values have natural stringification:
+// null becomes "null", undefined becomes "undefined"
 // and true becomes "true"
 // numbers are generally expressed in the natural way you’d expect, but as we discussed in Chapter 2
 // very small or very large numbers are represented in exponent form:
