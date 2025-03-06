@@ -71,5 +71,53 @@ console.log("a >>", a);
 var e = 42;
 var f = e++;
 
-console.log("e >>", e);
-console.log("f >>", f);
+console.log("e >>", e); // 43
+console.log("f >>", f); // 42
+
+// the expression e++ has two separate behaviors
+// first, it returns the current value of e, which is 42 (which then gets assigned to f)
+// but next, it changes the value of e itself, incrementing it by one
+// many developers would mistakenly believe that f has value 43 just like e does
+// but the confusion comes from not fully considering the when of the side effects of the ++ operator
+
+// the ++ increment operator and the -- decrement operator are both unary operators
+// which can be used in either a post-fix (“after”) position or prefix (“before”) position:
+var g = 42;
+
+console.log("g++", g++); // 42
+console.log("g", g); // 43
+console.log("++g", ++g); // 44
+console.log("g", g); // 44
+
+// when ++ is used in the prefix position as ++g
+// its side effect (incrementing g) happens before the value is returned from the expression
+// rather than after as with g++
+
+var h = 42,
+  i;
+i = (h++, h); // h++ increases the value and the second h is what is assigned in i
+
+console.log("h", h); // 43
+console.log("i", i); // 43
+
+// one last example of a side-effecting operator
+// which may at once be both obvious and non-obvious, is the = assignment operator
+
+var j;
+j = 40;
+console.log("j", j); // 40
+
+// it may not seem like = in j = 40 is a side-effecting operator for the expression
+// but if we examine the result value of the j = 40 statement
+// it’s the value that was just assigned (40)
+// so the assignment of that same value into j is essentially a side effect
+
+// this behavior that an assignment expression (or statement) results
+// in the assigned value is primarily useful for chained assignments, such as:
+var k, l, m;
+
+k = l = m = 42;
+
+// here, m = 42 is evaluated to 42 (with the side effect of assigning 42 to m)
+// then l = 42 is evaluated to 42 (with the side effect of assigning 42 to l)
+// and finally k = 42 is evaluated (with the side effect of assigning 42 to k)
