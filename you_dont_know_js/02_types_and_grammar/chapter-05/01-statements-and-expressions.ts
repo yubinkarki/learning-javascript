@@ -121,3 +121,29 @@ k = l = m = 42;
 // here, m = 42 is evaluated to 42 (with the side effect of assigning 42 to m)
 // then l = 42 is evaluated to 42 (with the side effect of assigning 42 to l)
 // and finally k = 42 is evaluated (with the side effect of assigning 42 to k)
+
+// another scenario to consider:
+function getVowels(str) {
+  var matches = "";
+  if (str) {
+    matches = str.match(/[aeiou]/g);
+  }
+
+  if (matches) {
+    return matches;
+  }
+}
+
+const result = getVowels("ok");
+console.log("getVowels('ok')", result); // ['o']
+
+// this works, and many developers prefer such
+// but using an idiom where we take advantage of the assignment side effect
+// we can simplify by combining the two if statements into one:
+function getV(str) {
+  var matches = "";
+
+  if (str && (matches = str.match(/[aeiou]/g))) {
+    return matches;
+  }
+}
