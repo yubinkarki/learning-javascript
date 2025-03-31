@@ -37,7 +37,7 @@
      */
     public showSequence(): string {
       const cacheValues: MapIterator<number> = this.fibCache.values();
-      const cacheValueList: number[] = Array.from(cacheValues).sort((a, b) => a - b);
+      const cacheValueList: number[] = Array.from(cacheValues).sort((a: number, b: number) => a - b);
 
       if (cacheValueList.length > 10) {
         const firstHalf: string = cacheValueList.slice(0, 8).join(", ");

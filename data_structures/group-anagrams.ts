@@ -1,5 +1,5 @@
 /*
-Given an array of strings group the anagrams together
+Given an array of strings, group the anagrams together
 You can return the answer in any order
 
 Example:
