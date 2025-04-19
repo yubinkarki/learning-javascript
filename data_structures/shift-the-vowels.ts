@@ -4,11 +4,8 @@ The last vowel should be replaced by the first vowel in the sentence
 
 Example:
 
-Input 1:
-> Hello World
-
-Output 1:
-> Hollo Werld
+Input 1: Hello World
+Output 1: Hollo Werld
 */
 
 {

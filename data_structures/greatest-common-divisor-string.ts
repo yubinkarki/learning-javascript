@@ -5,7 +5,7 @@ Given two strings str1 and str2, return the largest string x such that x divides
 Example:
 
 Input 1: str1 = "ABCABC", str2 = "ABC"
-Output 2: "ABC"
+Output 1: "ABC"
 
 Input 2: str1 = "ABABAB", str2 = "ABAB"
 Output 2: "AB"
