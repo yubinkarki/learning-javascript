@@ -91,7 +91,7 @@ console.log("Reversed string", reversedString);
 // so if you need something quick-n-dirty, often such an approach gets the job done
 
 // be careful! this approach doesn’t work for strings with complex (unicode) characters in them
-// (astral symbols, multibyte characters, etc.)
+// (astral symbols, multibyte characters, etc)
 
 // the other way to look at this is if you are more commonly doing tasks on your “strings”
 // that treat them as basically arrays of characters

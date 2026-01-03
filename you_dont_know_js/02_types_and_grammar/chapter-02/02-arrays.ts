@@ -63,7 +63,7 @@ console.log("Length of array e", e.length); // 14
 
 // there will be occasions where you need to convert an array-like value
 // (a numerically indexed collection of values) into a true array
-// usually so you can call array utilities (like indexOf(..), concat(..), forEach(..), etc.)
+// usually so you can call array utilities (like indexOf(..), concat(..), forEach(..), etc)
 // against the collection of values
 // one very common way to make such a conversion is to borrow the slice(..) utility against the value:
 function foo() {

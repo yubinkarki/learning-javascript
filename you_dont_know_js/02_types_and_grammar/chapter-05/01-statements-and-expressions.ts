@@ -13,7 +13,7 @@
 
 // a “sentence” is one complete formation of words that expresses a thought
 // it’s comprised of one or more “phrases”
-// each of which can be connected with punctuation marks or conjunctions (“and”, “or”, etc.)
+// each of which can be connected with punctuation marks or conjunctions (“and”, “or”, etc)
 // a phrase can itself be made up of smaller phrases
 // some phrases are incomplete and don’t accomplish much by themselves
 // while other phrases can stand on their own

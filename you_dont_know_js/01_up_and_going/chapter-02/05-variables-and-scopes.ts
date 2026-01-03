@@ -8,7 +8,7 @@
 // generally, the same rules apply to a property name as to a variable identifier
 // however, certain words cannot be used as variables, but are OK as property names
 // these words are called “reserved words”
-// and include the JS keywords (for, in, if, etc.) as well as null, true, and false
+// and include the JS keywords (for, in, if, etc) as well as null, true, and false
 
 /* FUNCTION SCOPES */
 

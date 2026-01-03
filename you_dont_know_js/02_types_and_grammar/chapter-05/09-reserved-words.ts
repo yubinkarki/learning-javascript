@@ -9,7 +9,7 @@
 
 // keywords are the obvious ones like function and switch
 // future reserved words include things like enum
-// though many of the rest of them (class, extends, etc.) are all now actually used by ES6
+// though many of the rest of them (class, extends, etc) are all now actually used by ES6
 // there are other strict mode-only reserved words like interface
 
 // StackOverflow user “art4theSould” creatively worked
@@ -31,7 +31,7 @@
 // In return for const, true, char
 // …Finally catch byte.
 
-// this poem includes words that were reserved in ES3 (byte, long, etc.)
+// this poem includes words that were reserved in ES3 (byte, long, etc)
 // that are no longer reserved as of ES5
 
 // prior to ES5, the reserved words also could not be property names

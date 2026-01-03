@@ -23,7 +23,7 @@
 // the proper way to consider these deviations is that
 // they are only reliably present/valid if your code is running in a browser
 // if your code always runs in browsers, you won’t see any observable difference
-// if not (like if it can run in node.js, Rhino, etc.)
+// if not (like if it can run in node.js, Rhino, etc)
 // or you’re not sure, tread carefully
 
 // the main compatibility differences:

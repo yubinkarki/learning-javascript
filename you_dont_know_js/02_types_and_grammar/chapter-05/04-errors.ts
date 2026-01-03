@@ -3,7 +3,7 @@
 /* ERRORS */
 
 // not only does JS have different subtypes of errors
-// (TypeError, ReferenceError, SyntaxError, etc.)
+// (TypeError, ReferenceError, SyntaxError, etc)
 // but also the grammar defines certain errors to be enforced at compile time
 // as compared to all other errors that happen during runtime
 
