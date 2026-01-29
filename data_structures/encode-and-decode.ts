@@ -59,16 +59,6 @@ Output 2: AAAAAAaaaXMMMMMMMMMMMM
     return order.map((item: string): string => `${counts.get(item)! + 2}${item}`).join("");
   }
 
-  const inputOne = "AAAAAAaaaXMMMMMMMMMMMMSSSDDFFAAeeeRRRR";
-
-  console.time("encoder");
-  const result: string = encoder(inputOne);
-  console.timeEnd("encoder");
-
-  console.time("optimizedEncoder");
-  const optimizedResult: string = optimizedEncoder(inputOne);
-  console.timeEnd("optimizedEncoder");
-
   function decoder(textToDecode: string): string {
     let mixedList: string[] = [];
     const contentList: (number | string)[] = [];
@@ -115,7 +105,7 @@ Output 2: AAAAAAaaaXMMMMMMMMMMMM
       if (!Number.isNaN(currentNumber)) {
         let numStr: string = currentChar;
 
-        // Check if next character is also a digit (2-digit number)
+        // check if next character is also a digit (2-digit number)
         if (i + 1 < textToDecode.length && !Number.isNaN(Number(textToDecode[i + 1]))) {
           numStr += textToDecode[i + 1];
           i++;
@@ -135,6 +125,4 @@ Output 2: AAAAAAaaaXMMMMMMMMMMMM
 
     return mixedList.join("");
   }
-
-  console.log(decoder(result));
 }
