@@ -125,4 +125,9 @@ Output 2: AAAAAAaaaXMMMMMMMMMMMM
 
     return mixedList.join("");
   }
+
+  const encodeResult: string = optimizedEncoder("AAAAAAaaaXMMMMMMMMMMMM");
+
+  console.log(encodeResult);
+  console.log(optimizedDecoder(encodeResult));
 }
