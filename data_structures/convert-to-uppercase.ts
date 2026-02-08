@@ -11,6 +11,7 @@ Output 1: HELLO*MY*FRIEND
 Input 2: __No_Way__
 Output 2: __NO*WAY__
 */
+
 {
   function toUpper(myInput: string): string {
     const upper: string = myInput.toUpperCase();

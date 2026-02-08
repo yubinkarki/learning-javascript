@@ -6,6 +6,7 @@ Example:
 Input 1: [12, 14, 15, 9, 100]  
 Output 1: 15 
 */
+
 {
   function secondHighest(numberList: number[]): number | undefined {
     let highest: number = 0;
