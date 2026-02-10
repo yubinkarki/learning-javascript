@@ -1,4 +1,4 @@
-Software Engineering test/interview questions and assessments.
+Software Engineering exercises.
 
 ### Table of Contents
 
