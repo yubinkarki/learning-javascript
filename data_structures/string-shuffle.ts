@@ -1,5 +1,5 @@
 /*
-Problem: String Shuffle Matcher
+String Shuffle Matcher
 
 Given a list of words and a target string
 Determine if the target string can be formed by shuffling the letters of any word in the list

@@ -14,17 +14,19 @@ Input 3: str1 = "LEET", str2 = "CODE"
 Output 3: ""
 */
 
-// function gcd(a: number, b: number): number {
-//   return b === 0 ? a : gcd(b, a % b);
-// }
+/* 
+function gcd(a: number, b: number): number {
+  return b === 0 ? a : gcd(b, a % b);
+}
 
-// function uncommonString(firstString: string, secondString: string): string {
-//   if (firstString.concat(secondString) !== secondString.concat(firstString)) return "";
+function uncommonString(firstString: string, secondString: string): string {
+  if (firstString.concat(secondString) !== secondString.concat(firstString)) return "";
 
-//   const gcdLength: number = gcd(firstString.length ?? 0, secondString.length ?? 0);
+  const gcdLength: number = gcd(firstString.length ?? 0, secondString.length ?? 0);
 
-//   return firstString.substring(0, gcdLength);
-// }
+  return firstString.substring(0, gcdLength);
+}
+*/
 
 {
   function uncommonString(firstString: string, secondString: string): string {
