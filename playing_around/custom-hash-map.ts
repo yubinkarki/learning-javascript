@@ -15,7 +15,7 @@
      * @param {valueType} v The value to associate with the key.
      * @returns {void}
      */
-    public insert(k: keyType, v: valueType): void {
+    public bhitraHal(k: keyType, v: valueType): void {
       this.cacheStorage.set(k, v);
     }
 
@@ -25,7 +25,7 @@
      * @returns {valueType | undefined} The value associated with the key, or undefined
      * if the key is not found.
      */
-    public retrieve(k: keyType): valueType | undefined {
+    public khoj(k: keyType): valueType | undefined {
       return this.cacheStorage.get(k);
     }
 
@@ -34,7 +34,7 @@
      * @param {keyType} k The key to remove.
      * @returns {void}
      */
-    public remove(k: keyType): void {
+    public eslaiHatau(k: keyType): void {
       if (this.cacheStorage.has(k)) {
         this.cacheStorage.delete(k);
       }
@@ -43,8 +43,8 @@
 
   const myHash: CustomHashMap = new CustomHashMap();
 
-  myHash.insert("name", "yubin");
-  const name: valueType | undefined = myHash.retrieve("name");
-  const address: valueType | undefined = myHash.retrieve("address");
+  myHash.bhitraHal("name", "yubin");
+  const name: valueType | undefined = myHash.khoj("name");
+  const address: valueType | undefined = myHash.khoj("address");
   console.log(name, address);
 }
