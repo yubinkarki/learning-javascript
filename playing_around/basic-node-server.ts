@@ -1,33 +1,44 @@
 // @ts-nocheck
 
-import { readFile } from "node:fs";
 import { resolve } from "node:path";
+import { readFile } from "node:fs/promises";
 import { createServer, IncomingMessage, ServerResponse } from "node:http";
 
-const port: number = 3000;
-const hostName: string = "127.0.0.1";
-const filePath: string = resolve(process.cwd(), "README.md");
+const STATUS = { OK: 200, INTERNAL_ERROR: 500 } as const;
+const MESSAGES = { NA: "N/A", DEFAULT: "Hello" } as const;
+
+const PORT: number = 3000;
+const HOSTNAME: string = "127.0.0.1";
+const FILEPATH: string = resolve(process.cwd(), "README.md");
+
+let cachedFirstLine: string | null = null;
+
+async function loadFirstLine(): Promise<void> {
+  const data: string = await readFile(FILEPATH, "utf-8");
+  const newLineIndex: number = data.indexOf("\n");
+  cachedFirstLine = newLineIndex === -1 ? data : data.slice(0, newLineIndex) || null;
+}
+
+function sendText(res: ServerResponse, status: number, body: string): void {
+  res.writeHead(status, { "Content-Type": "text/plain; charset=utf-8" });
+  res.end(body);
+}
 
 const myServer = createServer((req: IncomingMessage, res: ServerResponse): void => {
   if (req.url === "/first-line" && req.method === "GET") {
-    readFile(filePath, "utf-8", (err, data): void => {
-      if (err) {
-        res.statusCode = 500;
-        res.setHeader("Content-Type", "text/plain");
-        return res.end("Could not read file");
-      }
-
-      const lines: string[] = data.split("\n");
-
-      res.statusCode = 200;
-      res.setHeader("Content-Type", "text/plain");
-      return res.end(lines[0] || "Line was empty");
-    });
-  } else {
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "text/plain");
-    return res.end("Hello World");
+    if (cachedFirstLine == null) return sendText(res, STATUS.INTERNAL_ERROR, MESSAGES.NA);
+    return sendText(res, STATUS.OK, cachedFirstLine);
   }
+
+  return sendText(res, STATUS.OK, MESSAGES.DEFAULT);
 });
 
-myServer.listen(port, hostName, (): void => console.log(`Server is running at port ${port} on ${hostName}`));
+async function init(): Promise<void> {
+  await loadFirstLine();
+  myServer.listen(PORT, HOSTNAME, (): void => console.log(`Server is running at port ${PORT} on ${HOSTNAME}`));
+}
+
+init().catch((e: unknown) => {
+  console.error("Failed to start server:", e);
+  process.exit(1);
+});
